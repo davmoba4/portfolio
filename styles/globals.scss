@@ -4,7 +4,8 @@
   --main-font: "Mulish", sans-serif;
 }
 
-/* Reset start - modified from https://piccalil.li/blog/a-modern-css-reset/ */
+/* Reset: modified from https://piccalil.li/blog/a-modern-css-reset/ */
+
 *,
 *::before,
 *::after {
@@ -34,5 +35,3 @@ body {
   min-height: 100vh;
   line-height: 1.5;
 }
-
-/* Reset end - modified from https://piccalil.li/blog/a-modern-css-reset/ */
