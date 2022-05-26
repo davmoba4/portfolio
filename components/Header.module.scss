@@ -2,23 +2,96 @@
   z-index: 999;
   position: fixed;
   width: 100%;
-  text-align: left;
   background-color: var(--color-blue-dark);
+  transition: box-shadow 500ms ease-in-out;
+
+  &.scrolled {
+    box-shadow: 0px 9px 15px -7px rgba(0, 0, 0, 0.7);
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: transparent;
+  }
 
   h1 {
-    margin-left: 1rem;
     font-family: var(--font-cursive);
     font-size: 1.75rem;
   }
 
-  nav {
-    display: none;
+  .mobileNavToggle {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span,
+    span::before,
+    span::after {
+      content: "";
+      display: block;
+      background-color: var(--color-teal-light);
+      height: 3px;
+      width: 2rem;
+      border-radius: 3px;
+      transition: all 500ms ease-in-out;
+    }
+
+    span::before {
+      transform: translateY(-7px);
+    }
+
+    span::after {
+      transform: translateY(4px);
+    }
+
+    &.open {
+      span {
+        transform: rotate(45deg);
+      }
+      span::before {
+        opacity: 0;
+      }
+      span::after {
+        transform: translateY(-3px) rotate(-90deg);
+      }
+    }
+  }
+
+  .mobileNav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
     text-align: right;
     box-shadow: 0px 9px 15px -7px rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid transparent; // to fix collapsing margin
+    background-color: var(--color-blue-dark);
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+
+    &.open {
+      transform: scale(1, 1);
+
+      a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+      }
+    }
 
     ul {
       list-style: none;
+    }
+
+    ul:nth-child(1) {
+      margin-top: 1rem;
     }
 
     li {
@@ -29,73 +102,43 @@
     a {
       color: var(--color-gray-light);
       text-decoration: none;
+      opacity: 0;
+      transition: opacity 150ms ease-in-out;
 
       &:hover,
-      &:focus {
+      &:focus,
+      &.active {
         color: var(--color-teal-light);
       }
     }
   }
-}
 
-.navToggle {
-  display: none;
-}
-
-.navToggle:checked ~ nav {
-  display: block;
-}
-
-.navToggleLabel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 1rem;
-  height: 48px;
-  display: flex;
-  align-items: center;
-
-  span,
-  span::before,
-  span::after {
-    content: "";
-    display: block;
-    background-color: var(--color-teal-light);
-    height: 3px;
-    width: 2rem;
-    border-radius: 3px;
-    transition: all ease-in-out 500ms;
-  }
-
-  span::before {
-    transform: translateY(-7px);
-  }
-
-  span::after {
-    transform: translateY(4px);
-  }
-}
-
-.navToggleLabel.open {
-  span {
-    transform: rotate(45deg);
-  }
-  span::before {
-    opacity: 0;
-  }
-  span::after {
-    transform: translateY(-3px) rotate(-90deg);
+  .desktopNav{
+    display: none;
   }
 }
 
 /* Tablet styles */
 @media only screen and (min-width: 768px) {
   .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
     background-color: rgba(53, 66, 89, 0.85);
     backdrop-filter: blur(5px);
 
-    h1{
+    .wrapper {
+      padding: 0;
+    }
+    h1 {
       font-size: 2rem;
+    }
+
+    .mobileNavToggle,
+    .mobileNav {
+      display: none;
     }
   }
 }
