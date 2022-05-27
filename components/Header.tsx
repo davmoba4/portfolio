@@ -1,22 +1,12 @@
 import styles from "./Header.module.scss";
 
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import Link from "next/link";
 
 const Header: FunctionComponent = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   if (typeof window !== "undefined") {
-    /**
-     * When page is scrolled or back to top, isScrolled state sets accordingly.
-     * @returns Cleanup function
-     */
-    window.onscroll = () => {
-      setIsScrolled(window.pageYOffset === 0 ? false : true);
-      return () => (window.onscroll = null);
-    };
-
     /**
      * When the window is clicked and the clicked element is not part
      * of the header element and the nav is open, the nav is then closed.
@@ -38,7 +28,7 @@ const Header: FunctionComponent = () => {
 
   /**
    * When the nav is open or closed, the aria-expanded attribute gets
-   * set accordingly.
+   * set accordingly. navIsOpen gets toggled as well.
    */
   const handleMobileNavToggle = () => {
     const mobileNavToggle = document.getElementById("mobile-nav-toggle");
@@ -51,14 +41,18 @@ const Header: FunctionComponent = () => {
   };
 
   /**
-   * When a nav link is clicked, all active links get disabled and then
-   * the appropriate links get enabled.
+   * When a nav link is clicked, all active links get set as inactive
+   * and then the appropriate links get set as active.
    * @param {React.MouseEvent<HTMLAnchorElement>} e Event
    */
   const getActiveStyle = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const activeElements = document.getElementsByClassName(`${styles.active}`);
-    for (let i = 0; i < activeElements.length; i++) {
-      activeElements[i].classList.remove(`${styles.active}`);
+    const activeElementsIterable = document.getElementsByClassName(
+      `${styles.active}`
+    );
+    const activeElementsArray = [...activeElementsIterable];
+
+    for (let i = 0; i < activeElementsArray.length; i++) {
+      activeElementsArray[i].classList.remove(`${styles.active}`);
     }
 
     const anchorTag = e.target as Element;
@@ -96,12 +90,52 @@ const Header: FunctionComponent = () => {
     }
   };
 
+  /**
+   * On page load, the appropriate nav links are set to active according to
+   * the URL.
+   */
+  useEffect(() => {
+    const urlParts = window.location.href.split("/");
+    const slug = urlParts[urlParts.length - 1];
+
+    switch (slug) {
+      case "":
+        const homeTagMobile = document.getElementById("home-mobile");
+        const homeTagDesktop = document.getElementById("home-desktop");
+        homeTagMobile?.classList.add(`${styles.active}`);
+        homeTagDesktop?.classList.add(`${styles.active}`);
+        break;
+
+      case "#projects":
+        const projectsTagMobile = document.getElementById("projects-mobile");
+        const projectsTagDesktop = document.getElementById("projects-desktop");
+        projectsTagMobile?.classList.add(`${styles.active}`);
+        projectsTagDesktop?.classList.add(`${styles.active}`);
+        break;
+
+      case "#about":
+        const aboutTagMobile = document.getElementById("about-mobile");
+        const aboutTagDesktop = document.getElementById("about-desktop");
+        aboutTagMobile?.classList.add(`${styles.active}`);
+        aboutTagDesktop?.classList.add(`${styles.active}`);
+        break;
+
+      case "#contact":
+        const contactTagMobile = document.getElementById("contact-mobile");
+        const contactTagDesktop = document.getElementById("contact-desktop");
+        contactTagMobile?.classList.add(`${styles.active}`);
+        contactTagDesktop?.classList.add(`${styles.active}`);
+        break;
+
+      default:
+        break;
+    }
+  }, []);
+
   return (
     <header
       id="header"
-      className={`${styles.header} ${
-        isScrolled && !navIsOpen && styles.scrolled
-      }`}
+      className={`${styles.header} ${navIsOpen && styles.open}`}
     >
       <div className={styles.wrapper}>
         <h1>David Moreno-Bautista</h1>
@@ -123,11 +157,7 @@ const Header: FunctionComponent = () => {
         <ul>
           <li>
             <Link href="/">
-              <a
-                id="home-mobile"
-                className={styles.active}
-                onClick={(e) => getActiveStyle(e)}
-              >
+              <a id="home-mobile" onClick={(e) => getActiveStyle(e)}>
                 Home
               </a>
             </Link>
@@ -160,11 +190,7 @@ const Header: FunctionComponent = () => {
         <ul>
           <li>
             <Link href="/">
-              <a
-                id="home-desktop"
-                className={styles.active}
-                onClick={(e) => getActiveStyle(e)}
-              >
+              <a id="home-desktop" onClick={(e) => getActiveStyle(e)}>
                 Home
               </a>
             </Link>
