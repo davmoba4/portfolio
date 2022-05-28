@@ -15,7 +15,6 @@
   }
 
   &::before {
-    z-index: 990;
     content: "<header>";
     color: var(--color-gray-medium);
     font-family: var(--font-cursive);
@@ -160,7 +159,7 @@
     align-items: center;
     justify-content: space-between;
     padding-left: 3rem;
-    padding-right: 3.5rem;
+    padding-right: 3rem;
 
     &.open {
       &::after {

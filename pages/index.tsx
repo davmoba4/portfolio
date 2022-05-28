@@ -2,7 +2,8 @@ import styles from "../styles/Home.module.scss";
 
 import type { NextPage } from "next";
 import Head from "next/head";
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
+import IntroText from "../components/IntroText/IntroText";
 
 const Home: NextPage = () => {
   return (
@@ -17,34 +18,9 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <main className={styles.main}>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
-        <div style={{color: "var(--color-teal-light)"}}>test</div>
+        <div className={styles.intro}>
+          <IntroText/>
+        </div>
       </main>
     </div>
   );

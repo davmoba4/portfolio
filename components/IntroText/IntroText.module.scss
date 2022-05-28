@@ -1,0 +1,130 @@
+.container {
+  padding: 4rem 2rem 0;
+  max-width: 70ch;
+
+  .introHighlighted {
+    font-size: 1rem;
+    color: var(--color-teal-light);
+  }
+
+  .introClear {
+    color: white;
+  }
+
+  h1 {
+    position: relative;
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1rem;
+      font-weight: 500;
+      position: absolute;
+    }
+    &::before {
+      content: "<h1>";
+      top: -0.2rem;
+      left: -1rem;
+    }
+    &::after {
+      content: "</h1>";
+      bottom: -1rem;
+      left: -1rem;
+    }
+  }
+
+  p {
+    position: relative;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1rem;
+      font-weight: 500;
+      position: absolute;
+    }
+    &::before {
+      content: "<p>";
+      top: -1.5rem;
+      left: -1rem;
+    }
+    &::after {
+      content: "</p>";
+      bottom: -1.5rem;
+      left: -1rem;
+    }
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 768px) {
+  .container {
+    .introHighlighted {
+      font-size: 1.2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+
+      &::before {
+        top: 0.5rem;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Laptop styles */
+@media only screen and (min-width: 1280px) {
+  .container {
+    max-width: 55ch;
+    padding-left: 4rem;
+
+    .introHighlighted {
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+
+      &::before {
+        top: -0.2rem;
+      }
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* High-res laptop styles */
+@media only screen and (min-width: 1536px) {
+    .container {
+      max-width: 85ch;
+      padding-left: 8%;
+
+    .introHighlighted {
+      font-size: 1.2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+
+      &::before {
+        top: 0.5rem;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
