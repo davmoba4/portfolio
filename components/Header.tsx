@@ -64,6 +64,13 @@ const Header: FunctionComponent = () => {
         homeTagDesktop?.classList.add(`${styles.active}`);
         break;
 
+      case "Intro":
+        const introTagMobile = document.getElementById("intro-mobile");
+        const introTagDesktop = document.getElementById("intro-desktop");
+        introTagMobile?.classList.add(`${styles.active}`);
+        introTagDesktop?.classList.add(`${styles.active}`);
+        break;
+
       case "Projects":
         const projectsTagMobile = document.getElementById("projects-mobile");
         const projectsTagDesktop = document.getElementById("projects-desktop");
@@ -104,6 +111,13 @@ const Header: FunctionComponent = () => {
         const homeTagDesktop = document.getElementById("home-desktop");
         homeTagMobile?.classList.add(`${styles.active}`);
         homeTagDesktop?.classList.add(`${styles.active}`);
+        break;
+
+      case "#intro":
+        const introTagMobile = document.getElementById("intro-mobile");
+        const introTagDesktop = document.getElementById("intro-desktop");
+        introTagMobile?.classList.add(`${styles.active}`);
+        introTagDesktop?.classList.add(`${styles.active}`);
         break;
 
       case "#projects":
@@ -163,6 +177,13 @@ const Header: FunctionComponent = () => {
             </Link>
           </li>
           <li>
+            <Link href="/#intro">
+              <a id="intro-mobile" onClick={(e) => getActiveStyle(e)}>
+                Intro
+              </a>
+            </Link>
+          </li>
+          <li>
             <Link href="/#projects">
               <a id="projects-mobile" onClick={(e) => getActiveStyle(e)}>
                 Projects
@@ -192,6 +213,13 @@ const Header: FunctionComponent = () => {
             <Link href="/">
               <a id="home-desktop" onClick={(e) => getActiveStyle(e)}>
                 Home
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/#intro">
+              <a id="intro-desktop" onClick={(e) => getActiveStyle(e)}>
+                Intro
               </a>
             </Link>
           </li>
