@@ -17,16 +17,16 @@
 
 /* Laptop styles */
 @media only screen and (min-width: 1280px) {
-  .container{
-    .main{
+  .container {
+    .main {
       padding-top: 7rem;
       display: block;
       width: 100%;
-    }
 
-    .intro{
-      flex-direction: row;
-      justify-content: space-between;
+      .intro {
+        flex-direction: row;
+        justify-content: center;
+      }
     }
   }
 }

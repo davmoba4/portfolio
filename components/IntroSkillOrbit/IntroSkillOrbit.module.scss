@@ -1,0 +1,165 @@
+.containerDesktop {
+  display: none;
+}
+
+/* Laptop styles */
+@media only screen and (min-width: 1280px) {
+  .containerMobile {
+    display: none;
+  }
+  .containerDesktop {
+    // modified from: https://github.com/kevin-powell/seamless-can-i-clone-it/blob/main/src/sass/base/_orbit.scss
+    display: grid;
+    width: 45rem;
+    height: 45rem;
+    place-content: center;
+    align-items: center;
+
+    .orbit {
+      --middle-image-size: 12rem;
+      --speed: 120s;
+      --distance-radius: 15rem;
+      --distance-corners: 10.6066rem;
+
+      > img {
+        z-index: 10;
+        position: absolute;
+        width: var(--middle-image-size);
+        border-radius: 25%;
+      }
+
+      li > div > img {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+
+      ul {
+        width: var(--middle-image-size);
+        height: var(--middle-image-size);
+        display: grid;
+        place-items: center;
+        position: relative;
+        list-style: none;
+        transform-origin: center;
+        animation: orbit var(--speed) linear infinite;
+      }
+
+      li {
+        --icon-bg: var(--skill-color-orange-light);
+        --text-bg: var(--skill-color-orange-dark);
+        background-color: var(--icon-bg);
+        position: absolute;
+        width: 8rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        overflow: hidden;
+        font-weight: 500;
+        color: white;
+        text-align: center;
+        line-height: 1;
+        display: grid;
+        place-items: center;
+
+        & > * {
+          position: absolute;
+          animation: orbit var(--speed) linear reverse infinite;
+        }
+
+        > p {
+          background: var(--text-bg);
+          width: 100%;
+          height: 100%;
+          display: grid;
+          place-items: center;
+          opacity: 0;
+          transition: opacity 500ms;
+        }
+
+        &:hover > p {
+          opacity: 1;
+        }
+      }
+
+      li:nth-child(1) {
+        --icon-bg: var(--skill-color-orange-light);
+        --text-bg: var(--skill-color-orange-dark);
+        transform: translate(
+          calc(var(--distance-corners) * -1),
+          calc(var(--distance-corners) * -1)
+        );
+      }
+
+      li:nth-child(2) {
+        --icon-bg: var(--skill-color-brown-light);
+        --text-bg: var(--skill-color-brown-dark);
+        transform: translate(0, calc(var(--distance-radius) * -1));
+      }
+
+      li:nth-child(3) {
+        --icon-bg: var(--skill-color-pink-light);
+        --text-bg: var(--skill-color-pink-dark);
+        transform: translate(
+          var(--distance-corners),
+          calc(var(--distance-corners) * -1)
+        );
+      }
+
+      li:nth-child(4) {
+        --icon-bg: var(--skill-color-purple-light);
+        --text-bg: var(--skill-color-purple-dark);
+        transform: translate(var(--distance-radius), 0);
+      }
+
+      li:nth-child(5) {
+        --icon-bg: var(--skill-color-yellow-light);
+        --text-bg: var(--skill-color-yellow-dark);
+        transform: translate(var(--distance-corners), var(--distance-corners));
+      }
+
+      li:nth-child(6) {
+        --icon-bg: var(--skill-color-blue-light);
+        --text-bg: var(--skill-color-blue-dark);
+        transform: translate(0, var(--distance-radius));
+      }
+
+      li:nth-child(7) {
+        --icon-bg: var(--skill-color-red-light);
+        --text-bg: var(--skill-color-red-dark);
+        transform: translate(
+          calc(var(--distance-corners) * -1),
+          var(--distance-corners)
+        );
+      }
+
+      li:nth-child(8) {
+        --icon-bg: var(--skill-color-green-light);
+        --text-bg: var(--skill-color-green-dark);
+        transform: translate(calc(var(--distance-radius) * -1), 0);
+      }
+    }
+  }
+}
+
+/* High-res laptop styles */
+@media only screen and (min-width: 1536px) {
+  .containerDesktop{
+    .orbit{
+      transform: translateX(-1.5rem);
+    }
+  }
+}
+
+/* High-res laptop (larger) styles */
+@media only screen and (min-width: 1630px) {
+  .containerDesktop{
+    .orbit{
+      transform: translateX(0);
+    }
+  }
+}
+
+@keyframes orbit{
+  100% {
+    transform: rotate(1turn);
+  }
+}

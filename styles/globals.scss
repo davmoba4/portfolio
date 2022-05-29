@@ -1,4 +1,20 @@
+@use "sass:color";
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Mulish:wght@500&display=swap");
+
+/* skill colours modified from: https://github.com/kevin-powell/seamless-can-i-clone-it/blob/main/src/sass/abstracts/_colors.scss
+    and https://github.com/kevin-powell/seamless-can-i-clone-it/blob/main/src/sass/base/_custom-props.scss */
+    $skillColors: (
+  "green": hsl(123, 47%, 74%),
+  "blue": hsl(210, 47%, 74%),
+  "orange": hsl(34, 93%, 77%),
+  "purple": hsl(231, 44%, 76%),
+  "yellow": hsl(54, 76%, 79%),
+  "brown": hsl(20, 41%, 69%),
+  "red": hsl(0, 59%, 76%),
+  "pink": hsl(295, 42%, 72%),
+  "white": hsl(0, 0%, 100%),
+);
+
 :root {
   --font-main: "Mulish", sans-serif;
   --font-cursive: "Caveat", cursive;
@@ -6,6 +22,11 @@
   --color-teal-light: #00ffab;
   --color-gray-medium: #6d8497;
   --color-gray-light: #b2bcc4;
+
+  @each $name, $value in $skillColors {
+    --skill-color-#{$name}-light: #{$value};
+    --skill-color-#{$name}-dark: #{color.adjust($value, $lightness: -40%)};
+  }
 }
 
 /* Reset: modified from https://piccalil.li/blog/a-modern-css-reset/ */
@@ -40,4 +61,19 @@ body {
 body {
   min-height: 100vh;
   line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
