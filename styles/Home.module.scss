@@ -4,13 +4,13 @@
 
   .main {
     padding-top: 4rem;
-    display: flex;
-    justify-content: center;
 
     .intro {
       display: flex;
       flex-direction: column;
       gap: 4rem;
+      max-width: fit-content;
+      margin: 0 auto;
     }
   }
 }
@@ -20,8 +20,6 @@
   .container {
     .main {
       padding-top: 7rem;
-      display: block;
-      width: 100%;
 
       .intro {
         flex-direction: row;

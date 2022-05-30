@@ -1,9 +1,37 @@
+.containerMobile {
+  position: relative;
+
+  > img {
+    width: 70%;
+    margin: 0 15%;
+  }
+
+  &::before,
+  &::after {
+    color: var(--color-gray-medium);
+    font-family: var(--font-cursive);
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: absolute;
+  }
+  &::before {
+    content: "<div>";
+    top: -1.5rem;
+    left: 1rem;
+  }
+  &::after {
+    content: "</div>";
+    bottom: -1.5rem;
+    left: 1rem;
+  }
+}
+
 .containerDesktop {
   display: none;
 }
 
-/* Laptop styles */
-@media only screen and (min-width: 1280px) {
+/* Tablet styles */
+@media only screen and (min-width: 768px) {
   .containerMobile {
     display: none;
   }
@@ -14,10 +42,30 @@
     height: 45rem;
     place-content: center;
     align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1.1rem;
+      font-weight: 500;
+      position: absolute;
+    }
+    &::before {
+      content: "<div>";
+      top: 0rem;
+      left: 1rem;
+    }
+    &::after {
+      content: "</div>";
+      bottom: 0rem;
+      left: 1rem;
+    }
 
     .orbit {
       --middle-image-size: 12rem;
-      --speed: 120s;
       --distance-radius: 15rem;
       --distance-corners: 10.6066rem;
 
@@ -40,8 +88,6 @@
         place-items: center;
         position: relative;
         list-style: none;
-        transform-origin: center;
-        animation: orbit var(--speed) linear infinite;
       }
 
       li {
@@ -62,7 +108,6 @@
 
         & > * {
           position: absolute;
-          animation: orbit var(--speed) linear reverse infinite;
         }
 
         > p {
@@ -83,58 +128,84 @@
       li:nth-child(1) {
         --icon-bg: var(--skill-color-orange-light);
         --text-bg: var(--skill-color-orange-dark);
+        transform: translate(calc(var(--distance-radius) * -1), 0);
+      }
+
+      li:nth-child(2) {
+        --icon-bg: var(--skill-color-brown-light);
+        --text-bg: var(--skill-color-brown-dark);
         transform: translate(
           calc(var(--distance-corners) * -1),
           calc(var(--distance-corners) * -1)
         );
       }
 
-      li:nth-child(2) {
-        --icon-bg: var(--skill-color-brown-light);
-        --text-bg: var(--skill-color-brown-dark);
-        transform: translate(0, calc(var(--distance-radius) * -1));
-      }
-
       li:nth-child(3) {
         --icon-bg: var(--skill-color-pink-light);
         --text-bg: var(--skill-color-pink-dark);
+        transform: translate(0, calc(var(--distance-radius) * -1));
+      }
+
+      li:nth-child(4) {
+        --icon-bg: var(--skill-color-blue-light);
+        --text-bg: var(--skill-color-blue-dark);
         transform: translate(
           var(--distance-corners),
           calc(var(--distance-corners) * -1)
         );
       }
 
-      li:nth-child(4) {
-        --icon-bg: var(--skill-color-purple-light);
-        --text-bg: var(--skill-color-purple-dark);
-        transform: translate(var(--distance-radius), 0);
-      }
-
       li:nth-child(5) {
         --icon-bg: var(--skill-color-yellow-light);
         --text-bg: var(--skill-color-yellow-dark);
-        transform: translate(var(--distance-corners), var(--distance-corners));
+        transform: translate(var(--distance-radius), 0);
       }
 
       li:nth-child(6) {
-        --icon-bg: var(--skill-color-blue-light);
-        --text-bg: var(--skill-color-blue-dark);
-        transform: translate(0, var(--distance-radius));
+        --icon-bg: var(--skill-color-purple-light);
+        --text-bg: var(--skill-color-purple-dark);
+        transform: translate(var(--distance-corners), var(--distance-corners));
       }
 
       li:nth-child(7) {
         --icon-bg: var(--skill-color-red-light);
         --text-bg: var(--skill-color-red-dark);
-        transform: translate(
-          calc(var(--distance-corners) * -1),
-          var(--distance-corners)
-        );
+        transform: translate(0, var(--distance-radius));
       }
 
       li:nth-child(8) {
         --icon-bg: var(--skill-color-green-light);
         --text-bg: var(--skill-color-green-dark);
-        transform: translate(calc(var(--distance-radius) * -1), 0);
+        transform: translate(
+          calc(var(--distance-corners) * -1),
+          var(--distance-corners)
+        );
+      }
+    }
+  }
+}
+
+/* Laptop styles */
+@media only screen and (min-width: 1280px) {
+  .containerDesktop {
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    .orbit {
+      --speed: 120s;
+
+      ul {
+        transform-origin: center;
+        animation: orbit var(--speed) linear infinite;
+      }
+
+      li {
+        & > * {
+          position: absolute;
+          animation: orbit var(--speed) linear reverse infinite;
+        }
       }
     }
   }
@@ -142,8 +213,8 @@
 
 /* High-res laptop styles */
 @media only screen and (min-width: 1536px) {
-  .containerDesktop{
-    .orbit{
+  .containerDesktop {
+    .orbit {
       transform: translateX(-1.5rem);
     }
   }
@@ -151,14 +222,14 @@
 
 /* High-res laptop (larger) styles */
 @media only screen and (min-width: 1630px) {
-  .containerDesktop{
-    .orbit{
+  .containerDesktop {
+    .orbit {
       transform: translateX(0);
     }
   }
 }
 
-@keyframes orbit{
+@keyframes orbit {
   100% {
     transform: rotate(1turn);
   }

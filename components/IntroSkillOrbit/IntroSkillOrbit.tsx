@@ -5,7 +5,9 @@ import React from "react";
 function IntroSkillOrbit() {
   return (
     <>
-      <div className={styles.containerMobile}>IntroSkillOrbit</div>
+      <div className={styles.containerMobile}>
+        <img src="/images/orbit.png" />
+      </div>
       <div className={styles.containerDesktop}>
         <div className={styles.orbit}>
           <img src="/images/self.png" alt="" />
