@@ -20,9 +20,21 @@ const Home: NextPage = () => {
       <Header />
       <main className={styles.main}>
         <div className={styles.intro}>
-          <IntroText/>
-          <IntroSkillOrbit/>
+          <IntroText />
+          <IntroSkillOrbit />
         </div>
+        <div className={styles.categoryTitleWrapper}>
+          <h1 id="projects">
+            Projects
+          </h1>
+        </div>
+        <div> test </div>
+        <div> test </div>
+        <div> test </div>
+        <div> test </div>
+        <div> test </div>
+        <div> test </div>
+        <div> test </div>
       </main>
     </div>
   );

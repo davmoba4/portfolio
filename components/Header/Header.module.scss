@@ -14,21 +14,23 @@
     }
   }
 
-  &::before {
-    content: "<header>";
+  &::before,
+  &:after {
     color: var(--color-gray-medium);
     font-family: var(--font-cursive);
+    font-size: 1.1rem;
+    font-weight: 500;
     position: absolute;
+  }
+
+  &::before {
+    content: "<header>";
     top: -1.5rem;
-    left: 0;
-    padding-left: 0.5rem;
+    left: 0.5rem;
   }
   &::after {
     opacity: 1;
     content: "</header>";
-    color: var(--color-gray-medium);
-    font-family: var(--font-cursive);
-    position: absolute;
     bottom: -1.5rem;
     left: 0.5rem;
     transition: opacity 250ms ease-in-out 250ms;
@@ -114,6 +116,8 @@
         content: "</header>";
         color: var(--color-gray-medium);
         font-family: var(--font-cursive);
+        font-size: 1.1rem;
+        font-weight: 500;
         position: absolute;
         bottom: -1.5rem;
         left: 0.5rem;
