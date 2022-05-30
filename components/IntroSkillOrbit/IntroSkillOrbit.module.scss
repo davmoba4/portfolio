@@ -76,7 +76,7 @@
         border-radius: 25%;
       }
 
-      li > div > img {
+      li > img {
         width: 4.5rem;
         height: 4.5rem;
       }
@@ -199,6 +199,14 @@
       ul {
         transform-origin: center;
         animation: orbit var(--speed) linear infinite;
+      
+        &:hover{
+          animation-play-state: paused;
+
+          & * {
+            animation-play-state: paused;
+          }
+        }
       }
 
       li {

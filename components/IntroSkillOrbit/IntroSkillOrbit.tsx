@@ -13,51 +13,35 @@ function IntroSkillOrbit() {
           <img src="/images/self.png" alt="" />
           <ul>
             <li>
-              <div>
-                <img src="/images/HTML5-logo.svg" alt="" />
-              </div>
+              <img src="/images/HTML5-logo.svg" alt="" />
               <p>HTML5</p>
             </li>
             <li>
-              <div>
-                <img src="/images/CSS3-logo.svg" alt="" />
-              </div>
+              <img src="/images/CSS3-logo.svg" alt="" />
               <p>CSS3</p>
             </li>
             <li>
-              <div>
-                <img src="/images/Sass-logo.svg" alt="" />
-              </div>
+              <img src="/images/Sass-logo.svg" alt="" />
               <p>Sass</p>
             </li>
             <li>
-              <div>
-                <img src="/images/TypeScript-logo.svg" alt="" />
-              </div>
+              <img src="/images/TypeScript-logo.svg" alt="" />
               <p>TypeScript </p>
             </li>
             <li>
-              <div>
-                <img src="/images/JavaScript-logo.svg" alt="" />
-              </div>
+              <img src="/images/JavaScript-logo.svg" alt="" />
               <p>JavaScript</p>
             </li>
             <li>
-              <div>
-                <img src="/images/Reactjs-logo.svg" alt="" />
-              </div>
+              <img src="/images/Reactjs-logo.svg" alt="" />
               <p>React.js</p>
             </li>
             <li>
-              <div>
-                <img src="/images/Nextjs-logo.svg" alt="" />
-              </div>
+              <img src="/images/Nextjs-logo.svg" alt="" />
               <p>Next.js</p>
             </li>
             <li>
-              <div>
-                <img src="/images/Nodejs-logo.svg" alt="" />
-              </div>
+              <img src="/images/Nodejs-logo.svg" alt="" />
               <p>Node.js</p>
             </li>
           </ul>
