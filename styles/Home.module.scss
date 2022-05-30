@@ -48,16 +48,15 @@
       position: absolute;
       letter-spacing: 0;
       text-transform: none;
+      top: 25%;
     }
     &::before {
       content: "<h1>";
-      top: -1.5rem;
-      left: -1rem;
+      left: -3.5rem;
     }
     &::after {
       content: "</h1>";
-      bottom: -1.5rem;
-      left: -1rem;
+      right: -3.5rem;
     }
   }
 }

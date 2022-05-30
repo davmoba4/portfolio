@@ -21,16 +21,15 @@
       font-size: 1rem;
       font-weight: 500;
       position: absolute;
+      left: -1rem;
     }
     &::before {
       content: "<h1>";
       top: -0.2rem;
-      left: -1rem;
     }
     &::after {
       content: "</h1>";
       bottom: -1rem;
-      left: -1rem;
     }
   }
 
@@ -46,16 +45,15 @@
       font-size: 1.1rem;
       font-weight: 500;
       position: absolute;
+      left: -1rem;
     }
     &::before {
       content: "<p>";
       top: -1.5rem;
-      left: -1rem;
     }
     &::after {
       content: "</p>";
       bottom: -1.5rem;
-      left: -1rem;
     }
   }
 }

@@ -1,7 +1,7 @@
 .header {
   z-index: 999;
   position: fixed;
-  top: 2rem;
+  top: 1.5rem;
   width: 100%;
   background-color: rgba(53, 66, 89, 0.85);
   backdrop-filter: blur(5px);
@@ -21,18 +21,17 @@
     font-size: 1.1rem;
     font-weight: 500;
     position: absolute;
+    left: 0.5rem;
   }
 
   &::before {
     content: "<header>";
     top: -1.5rem;
-    left: 0.5rem;
   }
   &::after {
     opacity: 1;
     content: "</header>";
     bottom: -1.5rem;
-    left: 0.5rem;
     transition: opacity 250ms ease-in-out 250ms;
   }
 
@@ -171,9 +170,7 @@
       }
     }
 
-    &::before {
-      padding-left: 2rem;
-    }
+    &::before,
     &::after {
       left: 2rem;
     }
