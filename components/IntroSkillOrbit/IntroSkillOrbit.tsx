@@ -1,8 +1,8 @@
 import styles from "./IntroSkillOrbit.module.scss";
 
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-function IntroSkillOrbit() {
+const IntroSkillOrbit: FunctionComponent = () => {
   return (
     <>
       <div className={styles.containerMobile}>

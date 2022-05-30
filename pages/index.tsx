@@ -5,6 +5,7 @@ import Head from "next/head";
 import Header from "../components/Header/Header";
 import IntroText from "../components/IntroText/IntroText";
 import IntroSkillOrbit from "../components/IntroSkillOrbit/IntroSkillOrbit";
+import ProjectsDisplay from "../components/ProjectsDisplay/ProjectsDisplay";
 
 const Home: NextPage = () => {
   return (
@@ -28,13 +29,7 @@ const Home: NextPage = () => {
             Projects
           </h1>
         </div>
-        <div> test </div>
-        <div> test </div>
-        <div> test </div>
-        <div> test </div>
-        <div> test </div>
-        <div> test </div>
-        <div> test </div>
+        <ProjectsDisplay/>
       </main>
     </div>
   );
