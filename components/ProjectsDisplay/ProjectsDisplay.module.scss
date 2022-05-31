@@ -1,31 +1,56 @@
 .container {
-  width: fit-content;
+  max-width: fit-content;
   margin: 3.5rem auto 0;
 
   > p {
     position: relative;
+    margin: 0 1rem 0;
+    padding: 0 2.5rem 0;
+    text-align: center;
 
     &::before,
     &::after {
       color: var(--color-gray-medium);
       font-family: var(--font-cursive);
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       font-weight: 500;
       position: absolute;
       top: 0;
     }
     &::before {
       content: "<p>";
-      left: -3.5rem;
+      left: 0;
     }
     &::after {
       content: "</p>";
-      right: -3.5rem;
+      right: 0;
     }
   }
 
   .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
     width: fit-content;
-    margin: 4.5rem auto 0;
+    margin: 6rem auto 0;
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 768px) {
+  .container {
+    > p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+/* Tablet (slightly bigger) styles */
+@media only screen and (min-width: 825px) {
+  .container {
+    .contentWrapper {
+      flex-direction: row;
+      gap: 10rem;
+    }
   }
 }

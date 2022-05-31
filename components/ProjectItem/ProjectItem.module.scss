@@ -1,0 +1,116 @@
+.container {
+  --transition-speed-fast: 250ms;
+  --transition-speed-slow: 5000ms;
+  max-width: fit-content;
+  position: relative;
+  cursor: pointer;
+
+  &:hover > p {
+    opacity: 0;
+  }
+
+  &:hover .imageWrapper > img {
+    filter: brightness(150%);
+    transform: scale(1);
+  }
+
+  &:hover .imageWrapper::before {
+    transform: scale(0, 1);
+  }
+  &:hover .imageWrapper::after {
+    transform: scale(1, 0);
+  }
+
+  &::before,
+  &::after {
+    color: var(--color-gray-medium);
+    font-family: var(--font-cursive);
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: absolute;
+  }
+  &::before {
+    content: "<button>";
+    top: 0;
+    left: -3.5rem;
+  }
+  &::after {
+    content: "</button>";
+    bottom: 0;
+    right: -3.5rem;
+  }
+
+  .imageWrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: clamp(80px, 40vw, 250px);
+    height: clamp(80px, 40vw, 250px);
+    border-radius: 25%;
+    border: 1px solid white;
+
+    &::before,
+    &::after {
+      z-index: 10;
+      content: "";
+      position: absolute;
+      top: 1.75rem;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      left: 1.75rem;
+    }
+
+    &::before {
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      transform: scale(1.1, 1);
+      transition: transform ease-out var(--transition-speed-slow);
+    }
+
+    &::after {
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      transform: scale(1, 1.1);
+      transition: transform ease-out var(--transition-speed-slow);
+    }
+
+    > img {
+      max-width: 100%;
+      object-fit: cover;
+      filter: brightness(50%);
+      transform: scale(1.4);
+      transition: filter ease-out var(--transition-speed-fast),
+        transform ease-out var(--transition-speed-fast);
+    }
+  }
+
+  > p {
+    z-index: 15;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 70%;
+    text-align: center;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 120%;
+    opacity: 1;
+    transition: opacity ease-out var(--transition-speed-fast);
+  }
+}
+
+/* Tablet (slightly bigger) styles */
+@media only screen and (min-width: 825px) {
+  .container {
+    .imageWrapper {
+      width: 250px;
+      height: 250px;
+    }
+
+    > p {
+      width: 90%;
+      font-size: 1.5rem;
+    }
+  }
+}

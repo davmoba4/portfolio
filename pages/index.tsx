@@ -30,6 +30,11 @@ const Home: NextPage = () => {
           </h1>
         </div>
         <ProjectsDisplay/>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
+        <div>test</div>
       </main>
     </div>
   );
