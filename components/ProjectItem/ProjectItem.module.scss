@@ -30,14 +30,14 @@
     position: absolute;
   }
   &::before {
-    content: "<button>";
+    content: "<a>";
     top: 0;
-    left: -3.5rem;
+    left: -2.5rem;
   }
   &::after {
-    content: "</button>";
+    content: "</a>";
     bottom: 0;
-    right: -3.5rem;
+    right: -2.5rem;
   }
 
   .imageWrapper {
