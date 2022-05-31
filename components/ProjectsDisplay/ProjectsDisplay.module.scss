@@ -42,12 +42,7 @@
     > p {
       font-size: 1.1rem;
     }
-  }
-}
 
-/* Tablet (slightly bigger) styles */
-@media only screen and (min-width: 825px) {
-  .container {
     .contentWrapper {
       flex-direction: row;
       gap: 8rem;
