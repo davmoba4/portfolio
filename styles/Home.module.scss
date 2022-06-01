@@ -26,15 +26,15 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 5px;
+    height: 0.3125rem;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     background-color: var(--color-teal-light);
   }
 
   > h1 {
     position: relative;
-    letter-spacing: 5px;
+    letter-spacing: 0.3125rem;
     color: var(--color-teal-light);
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -62,7 +62,7 @@
 }
 
 /* Tablet styles */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48rem) {
   .categoryTitleWrapper {
     > h1 {
       font-size: 2rem;
@@ -71,7 +71,7 @@
 }
 
 /* Laptop styles */
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 80rem) {
   .container {
     .main {
       padding-top: 7rem;

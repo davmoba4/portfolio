@@ -30,7 +30,7 @@
 }
 
 /* Tablet styles */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48rem) {
   .containerMobile {
     display: none;
   }
@@ -184,7 +184,7 @@
 }
 
 /* Laptop styles */
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 80rem) {
   .containerDesktop {
     &::before,
     &::after {
@@ -197,8 +197,8 @@
       ul {
         transform-origin: center;
         animation: orbit var(--speed) linear infinite;
-      
-        &:hover{
+
+        &:hover {
           animation-play-state: paused;
 
           & * {
@@ -218,7 +218,7 @@
 }
 
 /* High-res laptop styles */
-@media only screen and (min-width: 1536px) {
+@media only screen and (min-width: 96rem) {
   .containerDesktop {
     .orbit {
       transform: translateX(-1.5rem);
@@ -227,7 +227,7 @@
 }
 
 /* High-res laptop (larger) styles */
-@media only screen and (min-width: 1630px) {
+@media only screen and (min-width: 101.875rem) {
   .containerDesktop {
     .orbit {
       transform: translateX(0);

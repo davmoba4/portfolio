@@ -59,7 +59,7 @@
 }
 
 /* Tablet styles */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48rem) {
   .container {
     .introHighlighted {
       font-size: 1.2rem;
@@ -80,7 +80,7 @@
 }
 
 /* Laptop styles */
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 80rem) {
   .container {
     max-width: 55ch;
     padding-left: 4rem;
@@ -104,10 +104,10 @@
 }
 
 /* High-res laptop styles */
-@media only screen and (min-width: 1536px) {
-    .container {
-      max-width: 85ch;
-      padding-left: 4%;
+@media only screen and (min-width: 96rem) {
+  .container {
+    max-width: 85ch;
+    padding-left: 4%;
 
     .introHighlighted {
       font-size: 1.2rem;

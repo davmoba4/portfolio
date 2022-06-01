@@ -44,10 +44,10 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    width: clamp(80px, 40vw, 250px);
-    height: clamp(80px, 40vw, 250px);
+    width: clamp(5rem, 40vw, 15.625rem);
+    height: clamp(5rem, 40vw, 15.625rem);
     border-radius: 25%;
-    border: 1px solid white;
+    border: 0.0625rem solid white;
 
     &::before,
     &::after {
@@ -61,15 +61,15 @@
     }
 
     &::before {
-      border-top: 1px solid white;
-      border-bottom: 1px solid white;
+      border-top: 0.0625rem solid white;
+      border-bottom: 0.0625rem solid white;
       transform: scale(1.1, 1);
       transition: transform ease-out var(--transition-speed-slow);
     }
 
     &::after {
-      border-left: 1px solid white;
-      border-right: 1px solid white;
+      border-left: 0.0625rem solid white;
+      border-right: 0.0625rem solid white;
       transform: scale(1, 1.1);
       transition: transform ease-out var(--transition-speed-slow);
     }
@@ -92,7 +92,7 @@
     transform: translate(-50%, -50%);
     max-width: 70%;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     color: white;
     font-size: 120%;
     opacity: 1;
@@ -101,11 +101,11 @@
 }
 
 /* Tablet styles */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 48rem) {
   .container {
     .imageWrapper {
-      width: 250px;
-      height: 250px;
+      width: 15.625rem;
+      height: 15.625rem;
     }
 
     > p {
