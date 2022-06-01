@@ -1,0 +1,11 @@
+.container {
+  max-width: fit-content;
+  margin: 3.5rem auto 10rem;
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 48rem) {
+  .container {
+    margin: 3.5rem auto 15rem;
+  }
+}

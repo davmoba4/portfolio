@@ -217,24 +217,6 @@
   }
 }
 
-/* High-res laptop styles */
-@media only screen and (min-width: 96rem) {
-  .containerDesktop {
-    .orbit {
-      transform: translateX(-1.5rem);
-    }
-  }
-}
-
-/* High-res laptop (larger) styles */
-@media only screen and (min-width: 101.875rem) {
-  .containerDesktop {
-    .orbit {
-      transform: translateX(0);
-    }
-  }
-}
-
 @keyframes orbit {
   100% {
     transform: rotate(1turn);

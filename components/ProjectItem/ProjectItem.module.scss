@@ -5,19 +5,23 @@
   position: relative;
   cursor: pointer;
 
-  &:hover > p {
+  &:hover > p,
+  &:focus > p {
     opacity: 0;
   }
 
-  &:hover .imageWrapper > img {
+  &:hover .imageWrapper > img,
+  &:focus .imageWrapper > img {
     filter: brightness(150%);
     transform: scale(1);
   }
 
-  &:hover .imageWrapper::before {
+  &:hover .imageWrapper::before,
+  &:focus .imageWrapper::before {
     transform: scale(0, 1);
   }
-  &:hover .imageWrapper::after {
+  &:hover .imageWrapper::after,
+  &:focus .imageWrapper::after {
     transform: scale(1, 0);
   }
 

@@ -1,6 +1,6 @@
 .container {
   max-width: fit-content;
-  margin: 3.5rem auto 0;
+  margin: 3.5rem auto 10rem;
 
   > p {
     position: relative;
@@ -15,7 +15,7 @@
       font-size: 0.9rem;
       font-weight: 500;
       position: absolute;
-      top: 0;
+      top: 0.2rem;
     }
     &::before {
       content: "<p>";
@@ -39,6 +39,8 @@
 /* Tablet styles */
 @media only screen and (min-width: 48rem) {
   .container {
+    margin: 3.5rem auto 15rem;
+
     > p {
       font-size: 1.1rem;
     }

@@ -6,6 +6,8 @@ import Header from "../components/Header/Header";
 import IntroText from "../components/IntroText/IntroText";
 import IntroSkillOrbit from "../components/IntroSkillOrbit/IntroSkillOrbit";
 import ProjectsDisplay from "../components/ProjectsDisplay/ProjectsDisplay";
+import AboutSection from "../components/AboutSection/AboutSection";
+import ContactSection from "../components/ContactSection/ContactSection";
 
 const Home: NextPage = () => {
   return (
@@ -24,17 +26,21 @@ const Home: NextPage = () => {
           <IntroText />
           <IntroSkillOrbit />
         </div>
+
         <div className={styles.categoryTitleWrapper}>
-          <h1 id="projects">
-            Projects
-          </h1>
+          <h1 id="projects">Projects</h1>
         </div>
-        <ProjectsDisplay/>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
+        <ProjectsDisplay />
+
+        <div className={styles.categoryTitleWrapper}>
+          <h1 id="about">About</h1>
+        </div>
+        <AboutSection />
+
+        <div className={styles.categoryTitleWrapper}>
+          <h1 id="contact">Contact</h1>
+        </div>
+        <ContactSection />
       </main>
     </div>
   );
