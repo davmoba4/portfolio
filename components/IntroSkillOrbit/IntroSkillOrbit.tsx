@@ -9,6 +9,24 @@ const IntroSkillOrbit: FunctionComponent = () => {
         <img src="/images/orbit.png" />
       </div>
       <div className={styles.containerDesktop}>
+        <input
+          type="checkbox"
+          id="rotationToggle"
+          className={styles.rotationToggle}
+        />
+        <label htmlFor="rotationToggle" className={styles.rotationToggleLabel}>
+          <img
+            src="/images/checkbox-unchecked.svg"
+            alt=""
+            className={styles.checkboxUnchecked}
+          />
+          <img
+            src="/images/checkbox-checked.svg"
+            alt=""
+            className={styles.checkboxChecked}
+          />
+          stop <br /> rotation
+        </label>
         <div className={styles.orbit}>
           <img src="/images/self.png" alt="" />
           <ul>
@@ -49,6 +67,6 @@ const IntroSkillOrbit: FunctionComponent = () => {
       </div>
     </>
   );
-}
+};
 
 export default IntroSkillOrbit;

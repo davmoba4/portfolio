@@ -7,9 +7,9 @@ const IntroText: FunctionComponent = () => {
     <div className={styles.container}>
       <h1>
         <span className={styles.introHighlighted}>Hi,</span>
-        <br></br>
-        <span className={styles.introClear}>I'm David,</span> <br></br> a
-        front-end web developer.
+        <br />
+        <span className={styles.introClear}>I'm David,</span>
+        <br /> a front-end web developer.
       </h1>
       <p>
         I'm a recent graduate with an Honours Bachelor of Science degree in
