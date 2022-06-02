@@ -1,6 +1,5 @@
 .container {
-  --transition-speed-fast: 250ms;
-  --transition-speed-slow: 5000ms;
+  --transition-speed: 250ms;
   max-width: fit-content;
   position: relative;
   cursor: pointer;
@@ -68,14 +67,14 @@
       border-top: 0.0625rem solid white;
       border-bottom: 0.0625rem solid white;
       transform: scale(1.1, 1);
-      transition: transform ease-out var(--transition-speed-slow);
+      transition: transform ease-out var(--transition-speed);
     }
 
     &::after {
       border-left: 0.0625rem solid white;
       border-right: 0.0625rem solid white;
       transform: scale(1, 1.1);
-      transition: transform ease-out var(--transition-speed-slow);
+      transition: transform ease-out var(--transition-speed);
     }
 
     > img {
@@ -83,8 +82,8 @@
       object-fit: cover;
       filter: brightness(50%);
       transform: scale(1.4);
-      transition: filter ease-out var(--transition-speed-fast),
-        transform ease-out var(--transition-speed-fast);
+      transition: filter ease-out var(--transition-speed),
+        transform ease-out var(--transition-speed);
     }
   }
 
@@ -100,7 +99,7 @@
     color: white;
     font-size: 120%;
     opacity: 1;
-    transition: opacity ease-out var(--transition-speed-fast);
+    transition: opacity ease-out var(--transition-speed);
   }
 }
 
