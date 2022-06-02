@@ -14,10 +14,9 @@ const Header: FunctionComponent = () => {
      * @returns Cleanup function
      */
     window.onclick = (e: MouseEvent) => {
-      const header = document.getElementById("header");
       const mobileNavToggle = document.getElementById("mobile-nav-toggle");
 
-      if (!header?.contains(e.target as Node) && navIsOpen) {
+      if (!mobileNavToggle?.contains(e.target as Node) && navIsOpen) {
         mobileNavToggle?.setAttribute("aria-expanded", "false");
         setNavIsOpen(false);
       }
@@ -133,10 +132,7 @@ const Header: FunctionComponent = () => {
   }, []);
 
   return (
-    <header
-      id="header"
-      className={`${styles.header} ${navIsOpen && styles.open}`}
-    >
+    <header className={`${styles.header} ${navIsOpen && styles.open}`}>
       <div className={styles.wrapper}>
         <h1>David Moreno-Bautista</h1>
         <button
