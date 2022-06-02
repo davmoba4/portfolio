@@ -218,8 +218,6 @@
     }
 
     .rotationToggle {
-      display: none;
-
       &:checked + .rotationToggleLabel .checkboxChecked {
         display: block;
       }
