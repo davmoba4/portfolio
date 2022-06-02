@@ -8,8 +8,8 @@ const Header: FunctionComponent = () => {
 
   if (typeof window !== "undefined") {
     /**
-     * When the window is clicked and the clicked element is not part
-     * of the header element and the nav is open, the nav is then closed.
+     * When the window is clicked and the clicked element is not part of the
+     * mobile nav toggle element and the nav is open, the nav is then closed.
      * @param {MouseEvent} e Event
      * @returns Cleanup function
      */
