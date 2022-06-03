@@ -30,11 +30,11 @@ const AboutSection: FunctionComponent = () => {
         <br />
         <br />
         I graduated in 2020 and decided to continue my education before pursuing
-        a profession. I did a Graduate Certificate in Computer Applications
-        Development from May 2021 to December 2021, where I learned more about
-        responsive web design and was introduced to concepts such as the MVC
-        design pattern in ASP.NET. I was also introduced to new technologies
-        such as Node.js, Express.js, MongoDB, and React Native.
+        a profession. I completed a Graduate Certificate in Computer
+        Applications Development from May 2021 to December 2021, where I learned
+        more about responsive web design and was introduced to concepts such as
+        the MVC design pattern in ASP.NET. I was also introduced to new
+        technologies such as Node.js, Express.js, MongoDB, and React Native.
         <br />
         <br />
         Today, I have almost 3 years of experience developing responsive web
