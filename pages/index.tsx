@@ -27,18 +27,18 @@ const Home: NextPage = () => {
           <IntroSkillOrbit />
         </div>
 
-        <div className={styles.categoryTitleWrapper}>
-          <h1 id="projects">Projects</h1>
+        <div id="projects" className={styles.categoryTitleWrapper}>
+          <h1>Projects</h1>
         </div>
         <ProjectsDisplay />
 
-        <div className={styles.categoryTitleWrapper}>
-          <h1 id="about">About</h1>
+        <div id="about" className={styles.categoryTitleWrapper}>
+          <h1>About</h1>
         </div>
         <AboutSection />
 
-        <div className={styles.categoryTitleWrapper}>
-          <h1 id="contact">Contact</h1>
+        <div id="contact" className={styles.categoryTitleWrapper}>
+          <h1>Contact</h1>
         </div>
         <ContactSection />
       </main>

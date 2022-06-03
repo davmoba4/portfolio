@@ -1,11 +1,38 @@
 .container {
   max-width: fit-content;
   margin: 3.5rem auto 10rem;
+
+  > p {
+    position: relative;
+    max-width: 60ch;
+    margin: 0 2rem 0;
+    font-size: 0.9rem;
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1.1rem;
+      font-weight: 500;
+      position: absolute;
+      left: -1rem;
+    }
+    &::before {
+      content: "<p>";
+      top: -1.5rem;
+    }
+    &::after {
+      content: "</p>";
+      bottom: -1.5rem;
+    }
+  }
 }
 
 /* Tablet styles */
 @media only screen and (min-width: 48rem) {
   .container {
-    margin: 3.5rem auto 15rem;
+    > p {
+      font-size: 1rem;
+    }
   }
 }

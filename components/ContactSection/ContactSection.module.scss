@@ -32,6 +32,11 @@
     font-size: 0.9rem;
     width: fit-content;
     margin: 5rem auto 0;
+
+    &::before,
+    &::after {
+      top: 0rem;
+    }
   }
 
   .email {
