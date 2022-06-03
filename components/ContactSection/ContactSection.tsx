@@ -13,7 +13,7 @@ const ContactSection: FunctionComponent = () => {
       <p className={styles.lowerParagraph}>Feel free to check these out too:</p>
       <div className={styles.linksWrapper}>
         <Link href="https://github.com/davmoba4">
-          <a>
+          <a target="_blank">
             <img
               src="/images/github-outline.svg"
               alt=""
@@ -22,7 +22,7 @@ const ContactSection: FunctionComponent = () => {
           </a>
         </Link>
         <Link href="https://www.linkedin.com/in/davmoba4/">
-          <a>
+          <a target="_blank">
             <img
               src="/images/linkedin-outline.svg"
               alt=""
