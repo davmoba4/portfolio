@@ -15,16 +15,20 @@ const IntroSkillOrbit: FunctionComponent = () => {
           className={styles.rotationToggle}
         />
         <label htmlFor="rotationToggle" className={styles.rotationToggleLabel}>
-          <img
-            src="/images/checkbox-unchecked.svg"
-            alt=""
-            className={styles.checkboxUnchecked}
-          />
-          <img
-            src="/images/checkbox-checked.svg"
-            alt=""
-            className={styles.checkboxChecked}
-          />
+          <div className={styles.checkboxUncheckedWrapper}>
+            <img
+              src="/images/checkbox-unchecked.svg"
+              alt=""
+              className={styles.checkboxUnchecked}
+            />
+          </div>
+          <div className={styles.checkboxCheckedWrapper}>
+            <img
+              src="/images/checkbox-checked.svg"
+              alt=""
+              className={styles.checkboxChecked}
+            />
+          </div>
           stop <br /> rotation
         </label>
         <div className={styles.orbit}>
