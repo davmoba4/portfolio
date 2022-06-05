@@ -14,7 +14,7 @@
     margin: 0 auto;
     padding: 0 4rem;
     letter-spacing: 0.3125rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
 
     &::before,
@@ -25,7 +25,7 @@
       font-weight: 500;
       position: absolute;
       letter-spacing: 0;
-      top: 0.4rem;
+      top: 0.8rem;
     }
     &::before {
       content: "<h1>";
@@ -200,11 +200,11 @@
 @media only screen and (min-width: 48rem) {
   .intro {
     > h1 {
-      font-size: 2rem;
+      font-size: 3rem;
 
       &::before,
       &::after {
-        top: 0.9rem;
+        top: 1.7rem;
       }
     }
 
