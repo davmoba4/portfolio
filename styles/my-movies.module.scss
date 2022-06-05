@@ -1,0 +1,257 @@
+.container {
+  background-color: var(--color-blue-dark);
+  color: var(--color-gray-light);
+
+  .main {
+    padding-top: 8rem;
+  }
+}
+
+.intro {
+  > h1 {
+    position: relative;
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 0 4rem;
+    letter-spacing: 0.3125rem;
+    font-size: 1.5rem;
+    color: white;
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1.1rem;
+      font-weight: 500;
+      position: absolute;
+      letter-spacing: 0;
+      top: 0.4rem;
+    }
+    &::before {
+      content: "<h1>";
+      left: 0.5rem;
+    }
+    &::after {
+      content: "</h1>";
+      right: 0.5rem;
+    }
+  }
+
+  > p {
+    position: relative;
+    max-width: fit-content;
+    margin: 2rem auto 0;
+    padding: 0 3rem;
+    font-size: 0.9rem;
+    text-align: center;
+    font-style: italic;
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1.1rem;
+      font-weight: 500;
+      position: absolute;
+      top: -0.25rem;
+      font-style: normal;
+    }
+    &::before {
+      content: "<p>";
+      left: 0.5rem;
+    }
+    &::after {
+      content: "</p>";
+      right: 0.5em;
+    }
+  }
+
+  .introDetails {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: fit-content;
+    margin: 5rem auto 0;
+    padding: 0 2.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1.1rem;
+      font-weight: 500;
+      position: absolute;
+      top: -0.35rem;
+      text-transform: none;
+    }
+    &::before {
+      content: "<ul>";
+      left: 0.5rem;
+    }
+    &::after {
+      content: "</ul>";
+      right: 0.5em;
+    }
+
+    > li {
+      padding: 0 0.5rem;
+      max-width: fit-content;
+      margin: 0 auto;
+    }
+    span {
+      margin-right: 0.2rem;
+      color: var(--color-teal-light);
+    }
+  }
+
+  h4 {
+    position: relative;
+    max-width: fit-content;
+    margin: 1.5rem auto 0;
+    padding: 0 3.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-teal-light);
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1.1rem;
+      font-weight: 500;
+      position: absolute;
+      top: -0.25rem;
+      text-transform: none;
+    }
+    &::before {
+      content: "<h4>";
+      left: 0.5rem;
+    }
+    &::after {
+      content: "</h4>";
+      right: 0.5em;
+    }
+  }
+
+  .introSkills {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: fit-content;
+    margin: 0.5rem auto 0;
+    padding: 0 3rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      color: var(--color-gray-medium);
+      font-family: var(--font-cursive);
+      font-size: 1.1rem;
+      font-weight: 500;
+      position: absolute;
+      top: -0.35rem;
+      text-transform: none;
+    }
+    &::before {
+      content: "<ul>";
+      left: 0.5rem;
+    }
+    &::after {
+      content: "</ul>";
+      right: 0.5em;
+    }
+
+    li {
+      text-align: center;
+      &::after {
+        content: "/";
+        margin: 0 0.5rem;
+      }
+    }
+
+    .lastIntroSkill {
+      &::after {
+        content: "";
+      }
+    }
+  }
+}
+
+/* Mobile in landscape orientation styles */
+@media only screen and (min-width: 40rem) {
+  .intro {
+    .introDetails {
+      li {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 48rem) {
+  .intro {
+    > h1 {
+      font-size: 2rem;
+
+      &::before,
+      &::after {
+        top: 0.9rem;
+      }
+    }
+
+    > p {
+      font-size: 1.1rem;
+
+      &::before,
+      &::after {
+        top: 0;
+      }
+    }
+
+    .introDetails {
+      margin: 8rem auto 0;
+      font-size: 1rem;
+      padding: 0 2rem;
+      flex-wrap: nowrap;
+
+      &::before,
+      &::after {
+        top: -0.15rem;
+      }
+
+      li {
+        padding: 0 1rem;
+      }
+      span {
+        margin-right: 0.5rem;
+      }
+    }
+
+    > h4 {
+      font-size: 1rem;
+
+      &::before,
+      &::after {
+        top: 0;
+      }
+    }
+
+    .introSkills {
+      font-size: 0.9rem;
+
+      &::before,
+      &::after {
+        top: -0.25rem;
+      }
+    }
+  }
+}
