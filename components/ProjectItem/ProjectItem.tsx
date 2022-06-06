@@ -18,7 +18,7 @@ const ProjectItem: FunctionComponent<Props> = ({
     <Link href={`${projectUrl}`}>
       <a className={styles.container}>
         <div className={styles.imageWrapper}>
-          <img src={`${imageUrl}`} />
+          <img src={`${imageUrl}`} alt="" />
         </div>
         <p>{title}</p>
       </a>

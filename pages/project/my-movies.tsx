@@ -1,11 +1,42 @@
 import styles from "../../styles/my-movies.module.scss";
 
 import { NextPage } from "next";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Header from "../../components/Header/Header";
+import Link from "next/link";
 
 const MyMovies: NextPage = () => {
+  const [windowWidth, setWindowWidth] = useState<number>();
+
+  /**
+   * Converts a measurement from rem to pixels
+   * @param rem Rem measurement to convert
+   * @returns Pixel measurement equivalent to the inputted rem
+   */
+  const convertRemToPixels = (rem: number) => {
+    return (
+      rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+    );
+  };
+
+  /**
+   * When the window is resized, the state variable holding its
+   * width is adjusted accordingly.
+   */
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
+    const onResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -46,6 +77,74 @@ const MyMovies: NextPage = () => {
             <li className={styles.lastIntroSkill}>TMDB API</li>
           </ul>
         </section>
+        <div className={styles.imagesContainer}>
+          <Link href="/carousel/my-movies#slide-01">
+            <a
+              className={`${
+                windowWidth && windowWidth < convertRemToPixels(48)
+                  ? styles.disabledLink
+                  : ""
+              }`}
+            >
+              <img src="/images/my-movies-01.png" alt="" />
+            </a>
+          </Link>
+          <Link href="/carousel/my-movies#slide-02">
+            <a
+              className={`${
+                windowWidth && windowWidth < convertRemToPixels(48)
+                  ? styles.disabledLink
+                  : ""
+              }`}
+            >
+              <img src="/images/my-movies-02.png" alt="" />
+            </a>
+          </Link>
+          <Link href="/carousel/my-movies#slide-03">
+            <a
+              className={`${
+                windowWidth && windowWidth < convertRemToPixels(48)
+                  ? styles.disabledLink
+                  : ""
+              }`}
+            >
+              <img src="/images/my-movies-03.png" alt="" />
+            </a>
+          </Link>
+          <Link href="/carousel/my-movies#slide-04">
+            <a
+              className={`${
+                windowWidth && windowWidth < convertRemToPixels(48)
+                  ? styles.disabledLink
+                  : ""
+              }`}
+            >
+              <img src="/images/my-movies-04.png" alt="" />
+            </a>
+          </Link>
+          <Link href="/carousel/my-movies#slide-05">
+            <a
+              className={`${
+                windowWidth && windowWidth < convertRemToPixels(48)
+                  ? styles.disabledLink
+                  : ""
+              }`}
+            >
+              <img src="/images/my-movies-05.png" alt="" />
+            </a>
+          </Link>
+          <Link href="/carousel/my-movies#slide-06">
+            <a
+              className={`${
+                windowWidth && windowWidth < convertRemToPixels(48)
+                  ? styles.disabledLink
+                  : ""
+              }`}
+            >
+              <img src="/images/my-movies-06.png" alt="" />
+            </a>
+          </Link>
+        </div>
       </main>
     </div>
   );

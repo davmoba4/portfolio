@@ -132,12 +132,12 @@ const Header: FunctionComponent = () => {
   }, []);
 
   return (
-    <header className={`${styles.header} ${navIsOpen && styles.open}`}>
+    <header className={`${styles.header} ${navIsOpen ? styles.open : ""}`}>
       <div className={styles.wrapper}>
         <h1>David Moreno-Bautista</h1>
         <button
           id="mobile-nav-toggle"
-          className={`${styles.mobileNavToggle} ${navIsOpen && styles.open}`}
+          className={`${styles.mobileNavToggle} ${navIsOpen ? styles.open : ""}`}
           onClick={handleMobileNavToggle}
           aria-controls="mobile-nav"
           aria-expanded="false"
@@ -148,7 +148,7 @@ const Header: FunctionComponent = () => {
 
       <nav
         id="mobile-nav"
-        className={`${styles.mobileNav} ${navIsOpen && styles.open}`}
+        className={`${styles.mobileNav} ${navIsOpen ? styles.open : ""}`}
       >
         <ul>
           <li>
