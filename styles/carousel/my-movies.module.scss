@@ -38,17 +38,16 @@
     position: relative;
 
     .navIndicators {
-      position: absolute;
-      top: -3.5%;
-      left: 50%;
-      transform: translateX(-50%);
+      width: fit-content;
+      margin: 0 auto;
+      padding: 1vw 0 1.5vw;
       display: flex;
       gap: 5%;
 
       > * {
         width: 1.5vw;
         height: 0.2vw;
-        border-radius: 20%;
+        border-radius: 0.2vw;
         background: white;
         opacity: 0.5;
       }
