@@ -1,7 +1,7 @@
 import styles from "../../../styles/carousel/my-movies.module.scss";
 
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 interface PageData {
@@ -73,6 +73,11 @@ const MyMovies: NextPage<Props> = ({ data, slug }) => {
         </div>
         <img src={`${data.imageUrl}`} alt={`${data.imageAlt}`} />
       </div>
+      <Link href="/project/my-movies">
+        <a className={styles.backBtn} aria-label="back">
+          &larr;
+        </a>
+      </Link>
       <Link href={`${data.previousUrl}`}>
         <a className={styles.previousBtn} aria-label="previous">
           &lsaquo;
