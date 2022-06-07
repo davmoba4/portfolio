@@ -1,4 +1,4 @@
-import styles from "../../styles/my-movies.module.scss";
+import styles from "../../styles/project/my-movies.module.scss";
 
 import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
@@ -78,7 +78,7 @@ const MyMovies: NextPage = () => {
           </ul>
         </section>
         <div className={styles.imagesContainer}>
-          <Link href="/carousel/my-movies#slide-01">
+          <Link href="/carousel/my-movies/slide-01">
             <a
               className={`${
                 windowWidth && windowWidth < convertRemToPixels(48)
@@ -86,10 +86,13 @@ const MyMovies: NextPage = () => {
                   : ""
               }`}
             >
-              <img src="/images/my-movies-01.png" alt="" />
+              <img
+                src="/images/my-movies-01.png"
+                alt="project screenshot one"
+              />
             </a>
           </Link>
-          <Link href="/carousel/my-movies#slide-02">
+          <Link href="/carousel/my-movies/slide-02">
             <a
               className={`${
                 windowWidth && windowWidth < convertRemToPixels(48)
@@ -97,10 +100,13 @@ const MyMovies: NextPage = () => {
                   : ""
               }`}
             >
-              <img src="/images/my-movies-02.png" alt="" />
+              <img
+                src="/images/my-movies-02.png"
+                alt="project screenshot two"
+              />
             </a>
           </Link>
-          <Link href="/carousel/my-movies#slide-03">
+          <Link href="/carousel/my-movies/slide-03">
             <a
               className={`${
                 windowWidth && windowWidth < convertRemToPixels(48)
@@ -108,10 +114,13 @@ const MyMovies: NextPage = () => {
                   : ""
               }`}
             >
-              <img src="/images/my-movies-03.png" alt="" />
+              <img
+                src="/images/my-movies-03.png"
+                alt="project screenshot three"
+              />
             </a>
           </Link>
-          <Link href="/carousel/my-movies#slide-04">
+          <Link href="/carousel/my-movies/slide-04">
             <a
               className={`${
                 windowWidth && windowWidth < convertRemToPixels(48)
@@ -119,10 +128,13 @@ const MyMovies: NextPage = () => {
                   : ""
               }`}
             >
-              <img src="/images/my-movies-04.png" alt="" />
+              <img
+                src="/images/my-movies-04.png"
+                alt="project screenshot four"
+              />
             </a>
           </Link>
-          <Link href="/carousel/my-movies#slide-05">
+          <Link href="/carousel/my-movies/slide-05">
             <a
               className={`${
                 windowWidth && windowWidth < convertRemToPixels(48)
@@ -130,10 +142,13 @@ const MyMovies: NextPage = () => {
                   : ""
               }`}
             >
-              <img src="/images/my-movies-05.png" alt="" />
+              <img
+                src="/images/my-movies-05.png"
+                alt="project screenshot five"
+              />
             </a>
           </Link>
-          <Link href="/carousel/my-movies#slide-06">
+          <Link href="/carousel/my-movies/slide-06">
             <a
               className={`${
                 windowWidth && windowWidth < convertRemToPixels(48)
@@ -141,7 +156,10 @@ const MyMovies: NextPage = () => {
                   : ""
               }`}
             >
-              <img src="/images/my-movies-06.png" alt="" />
+              <img
+                src="/images/my-movies-06.png"
+                alt="project screenshot six"
+              />
             </a>
           </Link>
         </div>
