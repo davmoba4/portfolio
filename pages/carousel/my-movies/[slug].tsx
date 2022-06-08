@@ -68,7 +68,10 @@ const MyMovies: NextPage<Props> = ({ data, slug }) => {
       <div className={styles.imageWrapper}>
         <div className={styles.navIndicators}>
           {Object.keys(PAGE_DATA).map((key: string) => (
-            <div className={`${key === slug ? styles.currentSlide : ""}`}></div>
+            <div
+              key={key}
+              className={`${key === slug ? styles.currentSlide : ""}`}
+            ></div>
           ))}
         </div>
         <img src={`${data.imageUrl}`} alt={`${data.imageAlt}`} />

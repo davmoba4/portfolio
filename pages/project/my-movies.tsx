@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Header from "../../components/Header/Header";
 import Link from "next/link";
+import Footer from "../../components/Footer/Footer";
 
 const MyMovies: NextPage = () => {
   const [windowWidth, setWindowWidth] = useState<number>();
@@ -163,6 +164,16 @@ const MyMovies: NextPage = () => {
             </a>
           </Link>
         </div>
+        <p className={styles.summary}></p>
+        <div className={styles.linksWrapper}>
+          <Link href="https://davmoba4-my-movies.vercel.app/">
+            <a className={`${styles.link} ${styles.purple}`}>Visit Website</a>
+          </Link>
+          <Link href="https://github.com/davmoba4/my-movies">
+            <a className={`${styles.link} ${styles.blue}`}>GitHub Repo</a>
+          </Link>
+        </div>
+        <Footer />
       </main>
     </div>
   );
