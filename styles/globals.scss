@@ -19,12 +19,10 @@ $skillColors: (
   --font-main: "Mulish", sans-serif;
   --font-cursive: "Caveat", cursive;
   --color-blue-dark: #354259;
-  --color-blue-light: hsl(200 100% 54%);
   --color-teal-light: #00ffab;
   --color-teal-dark: #305C5C;
   --color-gray-medium: #51616e;
   --color-gray-light: #b2bcc4;
-  --color-purple-light: hsl(300 100% 54%);
 
   @each $name, $value in $skillColors {
     --skill-color-#{$name}-light: #{$value};

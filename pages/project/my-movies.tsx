@@ -167,10 +167,10 @@ const MyMovies: NextPage = () => {
         <p className={styles.summary}></p>
         <div className={styles.linksWrapper}>
           <Link href="https://davmoba4-my-movies.vercel.app/">
-            <a className={`${styles.link} ${styles.purple}`}>Visit Website</a>
+            <a className={`${styles.link} ${styles.website}`}>Visit Website</a>
           </Link>
           <Link href="https://github.com/davmoba4/my-movies">
-            <a className={`${styles.link} ${styles.blue}`}>GitHub Repo</a>
+            <a className={`${styles.link} ${styles.github}`}>GitHub Repo</a>
           </Link>
         </div>
         <Footer />
