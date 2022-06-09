@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer: FunctionComponent = () => {
   return (
-    <div className={styles.container}>
+    <footer className={styles.footer}>
       <Link href="mailto:davmoba4@gmail.com">
         <a className={styles.email}>davmoba4@gmail.com</a>
       </Link>
@@ -29,7 +29,7 @@ const Footer: FunctionComponent = () => {
           </a>
         </Link>
       </div>
-    </div>
+    </footer>
   );
 };
 

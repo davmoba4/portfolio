@@ -173,6 +173,7 @@ const MyMovies: NextPage = () => {
             <a className={`${styles.link} ${styles.github}`}>GitHub Repo</a>
           </Link>
         </div>
+        <div className={styles.navigationWrapper}>test</div>
         <Footer />
       </main>
     </div>
