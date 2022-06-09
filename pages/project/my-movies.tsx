@@ -173,7 +173,14 @@ const MyMovies: NextPage = () => {
             <a className={`${styles.link} ${styles.github}`}>GitHub Repo</a>
           </Link>
         </div>
-        <div className={styles.navigationWrapper}>test</div>
+        <div className={styles.navigationWrapper}>
+          <Link href="/project/connect">
+            <a className={styles.next}>
+              <h4>connect</h4>
+              <span>&rarr;</span>
+            </a>
+          </Link>
+        </div>
         <Footer />
       </main>
     </div>
