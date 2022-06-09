@@ -37,6 +37,8 @@
     position: relative;
     margin-top: 3rem;
     font-size: 0.9rem;
+    text-align: justify;
+    text-justify: inter-word;
 
     &::before,
     &::after {

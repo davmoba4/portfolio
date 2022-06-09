@@ -24,25 +24,6 @@
     transform: scale(1, 0);
   }
 
-  &::before,
-  &::after {
-    color: var(--color-gray-medium);
-    font-family: var(--font-cursive);
-    font-size: 1.1rem;
-    font-weight: 500;
-    position: absolute;
-  }
-  &::before {
-    content: "<a>";
-    top: 0;
-    left: -2.5rem;
-  }
-  &::after {
-    content: "</a>";
-    bottom: 0;
-    right: -2.5rem;
-  }
-
   .imageWrapper {
     position: relative;
     display: inline-block;
