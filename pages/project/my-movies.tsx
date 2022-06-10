@@ -175,7 +175,7 @@ const MyMovies: NextPage = () => {
             <br />
             <br />
             For user authentication, I use a combination of Firebase email and
-            password based authentication and React’s context API. I wrap the
+            password based authentication and React's context API. I wrap the
             application in an authentication context provider that listens for
             any change in token IDs from Firebase. It then sets the user as a
             state variable. This ensures that the user is verified on every page
@@ -196,7 +196,7 @@ const MyMovies: NextPage = () => {
             For the "my collection" feature, I use the Firebase Web SDK version
             9 to communicate with a Firebase Realtime Database instant. I use
             custom rules to make sure users can only access and edit their own
-            data. To update the view on each addition or deletion to the user’s
+            data. To update the view on each addition or deletion to the user's
             collection, I use a listener for children added or removed from the
             node pertaining to that user on the database.
             <br />
