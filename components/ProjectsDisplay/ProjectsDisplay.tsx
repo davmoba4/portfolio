@@ -7,7 +7,7 @@ const ProjectsDisplay: FunctionComponent = () => {
   return (
     <div className={styles.container}>
       <p>
-        Examples of work I've done as a web developer. Click on each one for
+        Examples of work I&#39;ve done as a web developer. Click on each one for
         more details.
       </p>
       <div className={styles.contentWrapper}>

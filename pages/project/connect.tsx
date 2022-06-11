@@ -216,7 +216,7 @@ const Connect: NextPage = () => {
             prebuilt layout components and icon library. I chose to have dark
             mode as the default color mode with the ability to switch to and
             from light mode using the appropriate React hooks to attain this.
-            Using Chakra UI's style props to style the application without
+            Using Chakra UI&#39;s style props to style the application without
             leaving the JSX, I adjust the colours on the spot to match the
             appropriate color mode that the user has chosen.
           </p>
