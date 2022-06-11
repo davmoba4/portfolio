@@ -180,7 +180,46 @@ const Connect: NextPage = () => {
           </Link>
         </div>
         <div className={styles.summaryWrapper}>
-          <p>test</p>
+          <p>
+            connect is a web application that uses WebSockets to facilitate
+            real-time text and emoji communication between users. Users can
+            upload a profile picture, join one on one or group chats, and
+            receive notifications and read receipts for each of their chats.
+            Users can also update group chats by changing the name, adding or
+            removing users, or changing the group admin.
+            <br />
+            <br />
+            For user authentication, I use JWT authentication. I generate a JWT
+            that is sent back to the client on login and signup. I use
+            Express.js routers on the server to handle the requests for the REST
+            API that I built for the application. Every route outside of the
+            authentication route is protected by JWT authentication middleware
+            that matches the JWT to the user on the database.
+            <br />
+            <br />
+            To interface with the MongoDB database, I use Mongoose to create
+            schemas for each collection organized as models. The controllers
+            then take care of creating, fetching, editing, and deleting data
+            using async and await. On the client side, I use Axios to send
+            requests to the REST API that I built, which then communicates with
+            the database.
+            <br />
+            <br />
+            For real-time communication between users, I use a socket.io
+            connection where the server is listening to different events such as
+            the user typing for typing indicators and when a message is sent. A
+            response is emitted on these events, which the client listens to in
+            order to update the view accordingly.
+            <br />
+            <br />
+            To style the application, I use Chakra UI extensively for its
+            prebuilt layout components and icon library. I chose to have dark
+            mode as the default color mode with the ability to switch to and
+            from light mode using the appropriate React hooks to attain this.
+            Using Chakra UI's style props to style the application without
+            leaving the JSX, I adjust the colours on the spot to match the
+            appropriate color mode that the user has chosen.
+          </p>
         </div>
         <div className={styles.linksWrapper}>
           <Link href="https://davmoba4-connect.netlify.app/">
