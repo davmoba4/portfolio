@@ -1,3 +1,3 @@
-# portfolio
+# Portfolio
 
-My portfolio. Live at: https://david-moreno-bautista.vercel.app/
+My portfolio website. Live at: https://david-moreno-bautista.vercel.app/
