@@ -213,12 +213,12 @@ const MyMovies: NextPage = () => {
         </div>
         <div className={styles.linksWrapper}>
           <Link href="https://davmoba4-my-movies.vercel.app/">
-            <a className={`${styles.link} ${styles.website}`} target="_blank">
+            <a className={styles.link} target="_blank">
               Visit Website
             </a>
           </Link>
           <Link href="https://github.com/davmoba4/my-movies">
-            <a className={`${styles.link} ${styles.github}`} target="_blank">
+            <a className={styles.link} target="_blank">
               GitHub Repo
             </a>
           </Link>

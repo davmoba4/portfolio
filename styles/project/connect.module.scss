@@ -250,6 +250,8 @@
   margin: 1.5rem auto 8rem;
 
   .link {
+    z-index: 1;
+    transform: translate3d(0, 0, 0); // to fix z-index issue on safari
     position: relative;
     font-size: 1.1rem;
     font-weight: 900;
@@ -304,13 +306,6 @@
       &::before {
         opacity: 1;
       }
-    }
-
-    &.website {
-      z-index: 10;
-    }
-    &.github {
-      z-index: 9;
     }
   }
 }

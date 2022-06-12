@@ -25,6 +25,7 @@
   }
 
   .imageWrapper {
+    transform: translate3d(0, 0, 0); // to fix z-index issue on safari
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -63,8 +64,7 @@
       object-fit: cover;
       filter: brightness(50%);
       transform: scale(1.4);
-      transition: filter ease-out var(--transition-speed),
-        transform ease-out var(--transition-speed);
+      transition: transform ease-out var(--transition-speed);
     }
   }
 
@@ -73,7 +73,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0); // 3d to fix z-index issue on safari
     max-width: 70%;
     text-align: center;
     letter-spacing: 0.125rem;

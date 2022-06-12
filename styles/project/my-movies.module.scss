@@ -246,6 +246,8 @@
   margin: 1.5rem auto 8rem;
 
   .link {
+    z-index: 1;
+    transform: translate3d(0, 0, 0); // to fix z-index issue on safari
     position: relative;
     font-size: 1.1rem;
     font-weight: 900;
@@ -301,13 +303,6 @@
         opacity: 1;
       }
     }
-
-    &.website {
-      z-index: 10;
-    }
-    &.github {
-      z-index: 9;
-    }
   }
 }
 
@@ -315,7 +310,7 @@
   .next {
     position: relative;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     gap: 14%;
     padding: 2rem 8% 2rem 2rem;
     width: 100%;

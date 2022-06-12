@@ -223,12 +223,12 @@ const Connect: NextPage = () => {
         </div>
         <div className={styles.linksWrapper}>
           <Link href="https://davmoba4-connect.netlify.app/">
-            <a className={`${styles.link} ${styles.website}`} target="_blank">
+            <a className={styles.link} target="_blank">
               Visit Website
             </a>
           </Link>
           <Link href="https://github.com/davmoba4/connect">
-            <a className={`${styles.link} ${styles.github}`} target="_blank">
+            <a className={styles.link} target="_blank">
               GitHub Repo
             </a>
           </Link>
