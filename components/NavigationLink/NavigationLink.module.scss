@@ -1,0 +1,132 @@
+.previous,
+.next {
+  position: relative;
+  display: flex;
+  gap: 14%;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform-origin: top;
+    transform: scale(1, 0);
+    transition: transform ease-in-out 400ms;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      transform: scale(1, 1);
+    }
+    h4,
+    span {
+      color: var(--color-teal-light);
+    }
+    h4::before {
+      color: white;
+    }
+  }
+
+  h4 {
+    z-index: 10;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -0.8rem;
+      left: 0;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: var(--color-gray-light);
+    }
+  }
+
+  span {
+    z-index: 10;
+    position: relative;
+    display: block;
+    transition: transform ease-in 400ms 400ms;
+  }
+}
+.previous {
+  padding: 2rem 2rem 2rem 8%;
+
+  &:hover,
+  &:focus {
+    span {
+      transform: translateX(-1rem);
+    }
+  }
+
+  h4::before {
+    content: "Previous project";
+  }
+}
+.next {
+  justify-content: flex-end;
+  padding: 2rem 8% 2rem 2rem;
+
+  &:hover,
+  &:focus {
+    span {
+      transform: translateX(1rem);
+    }
+  }
+
+  h4::before {
+    content: "Next project";
+  }
+}
+
+/* Mobile in landscape orientation styles */
+@media only screen and (min-width: 40rem) {
+  .previous {
+    padding: 2rem 2rem 2rem 15%;
+
+    &:hover,
+    &:focus {
+      span {
+        transform: translateX(-2rem);
+      }
+    }
+  }
+  .next {
+    padding: 2rem 15% 2rem 2rem;
+
+    &:hover,
+    &:focus {
+      span {
+        transform: translateX(2rem);
+      }
+    }
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 48rem) {
+  .previous,
+  .next {
+    font-size: 3rem;
+
+    h4::before {
+      top: -0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  .previous {
+    padding: 2rem 2rem 2rem 19%;
+  }
+  .next {
+    padding: 2rem 19% 2rem 2rem;
+  }
+}

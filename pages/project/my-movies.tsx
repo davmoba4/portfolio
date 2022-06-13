@@ -1,43 +1,49 @@
-import styles from "../../styles/project/my-movies.module.scss";
+import styles from "../../styles/project.module.scss";
 
 import { NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Header from "../../components/Header/Header";
-import Link from "next/link";
 import Footer from "../../components/Footer/Footer";
+import ProjectIntro from "../../components/ProjectIntro/ProjectIntro";
+import ProjectImages from "../../components/ImageRow/ImageRow";
+import LinkButton from "../../components/LinkButton/LinkButton";
+import NavigationLink from "../../components/NavigationLink/NavigationLink";
+
+const IMAGES = [
+  {
+    href: "/carousel/my-movies/slide-01",
+    src: "/images/my-movies-01.png",
+    alt: "project screenshot one",
+  },
+  {
+    href: "/carousel/my-movies/slide-02",
+    src: "/images/my-movies-02.png",
+    alt: "project screenshot two",
+  },
+  {
+    href: "/carousel/my-movies/slide-03",
+    src: "/images/my-movies-03.png",
+    alt: "project screenshot three",
+  },
+  {
+    href: "/carousel/my-movies/slide-04",
+    src: "/images/my-movies-04.png",
+    alt: "project screenshot four",
+  },
+  {
+    href: "/carousel/my-movies/slide-05",
+    src: "/images/my-movies-05.png",
+    alt: "project screenshot five",
+  },
+  {
+    href: "/carousel/my-movies/slide-06",
+    src: "/images/my-movies-06.png",
+    alt: "project screenshot six",
+  },
+];
 
 const MyMovies: NextPage = () => {
-  const [windowWidth, setWindowWidth] = useState<number>();
-
-  /**
-   * Converts a measurement from rem to pixels
-   * @param rem Rem measurement to convert
-   * @returns Pixel measurement equivalent to the inputted rem
-   */
-  const convertRemToPixels = (rem: number) => {
-    return (
-      rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
-    );
-  };
-
-  /**
-   * When the window is resized, the state variable holding its
-   * width is adjusted accordingly.
-   */
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-
-    const onResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", onResize);
-
-    return () => {
-      window.removeEventListener("resize", onResize);
-    };
-  }, []);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -50,120 +56,26 @@ const MyMovies: NextPage = () => {
       </Head>
       <Header />
       <main className={styles.main}>
-        <section className={styles.intro}>
-          <h1>My Movies</h1>
-          <p>A website for movie information and collection.</p>
-          <ul className={styles.introDetails}>
-            <li>
-              <span>role:</span> full-stack developer
-            </li>
-            <li>
-              <span>context:</span> personal project
-            </li>
-            <li>
-              <span>period:</span> 2022
-            </li>
-          </ul>
-          <h4>Technology:</h4>
-          <ul className={styles.introSkills}>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>Material-UI</li>
-            <li>TypeScript</li>
-            <li>React.js</li>
-            <li>Context API</li>
-            <li>Next.js</li>
-            <li>Node.js</li>
-            <li>Firebase Web SDK version 9</li>
-            <li className={styles.lastIntroSkill}>TMDB API</li>
-          </ul>
-        </section>
-        <div className={styles.imagesContainer}>
-          <Link href="/carousel/my-movies/slide-01">
-            <a
-              className={`${
-                windowWidth && windowWidth < convertRemToPixels(48)
-                  ? styles.disabledLink
-                  : ""
-              }`}
-            >
-              <img
-                src="/images/my-movies-01.png"
-                alt="project screenshot one"
-              />
-            </a>
-          </Link>
-          <Link href="/carousel/my-movies/slide-02">
-            <a
-              className={`${
-                windowWidth && windowWidth < convertRemToPixels(48)
-                  ? styles.disabledLink
-                  : ""
-              }`}
-            >
-              <img
-                src="/images/my-movies-02.png"
-                alt="project screenshot two"
-              />
-            </a>
-          </Link>
-          <Link href="/carousel/my-movies/slide-03">
-            <a
-              className={`${
-                windowWidth && windowWidth < convertRemToPixels(48)
-                  ? styles.disabledLink
-                  : ""
-              }`}
-            >
-              <img
-                src="/images/my-movies-03.png"
-                alt="project screenshot three"
-              />
-            </a>
-          </Link>
-          <Link href="/carousel/my-movies/slide-04">
-            <a
-              className={`${
-                windowWidth && windowWidth < convertRemToPixels(48)
-                  ? styles.disabledLink
-                  : ""
-              }`}
-            >
-              <img
-                src="/images/my-movies-04.png"
-                alt="project screenshot four"
-              />
-            </a>
-          </Link>
-          <Link href="/carousel/my-movies/slide-05">
-            <a
-              className={`${
-                windowWidth && windowWidth < convertRemToPixels(48)
-                  ? styles.disabledLink
-                  : ""
-              }`}
-            >
-              <img
-                src="/images/my-movies-05.png"
-                alt="project screenshot five"
-              />
-            </a>
-          </Link>
-          <Link href="/carousel/my-movies/slide-06">
-            <a
-              className={`${
-                windowWidth && windowWidth < convertRemToPixels(48)
-                  ? styles.disabledLink
-                  : ""
-              }`}
-            >
-              <img
-                src="/images/my-movies-06.png"
-                alt="project screenshot six"
-              />
-            </a>
-          </Link>
-        </div>
+        <ProjectIntro
+          title="My Movies"
+          summary="A website for movie information and collection."
+          role="full-stack developer"
+          context="personal project"
+          period="2022"
+          skills={[
+            "HTML5",
+            "CSS3",
+            "Material-UI",
+            "TypeScript",
+            "React.js",
+            "Context API",
+            "Next.js",
+            "Node.js",
+            "Firebase Web SDK version 9",
+            "TMDB API",
+          ]}
+        />
+        <ProjectImages isFirst={true} images={IMAGES} />
         <div className={styles.summaryWrapper}>
           <p>
             My Movies is a web application that uses server-side rendering to
@@ -212,24 +124,21 @@ const MyMovies: NextPage = () => {
           </p>
         </div>
         <div className={styles.linksWrapper}>
-          <Link href="https://davmoba4-my-movies.vercel.app/">
-            <a className={styles.link} target="_blank">
-              Visit Website
-            </a>
-          </Link>
-          <Link href="https://github.com/davmoba4/my-movies">
-            <a className={styles.link} target="_blank">
-              GitHub Repo
-            </a>
-          </Link>
+          <LinkButton
+            url="https://davmoba4-my-movies.vercel.app/"
+            text="Visit Website"
+          />
+          <LinkButton
+            url="https://github.com/davmoba4/my-movies"
+            text="GitHub Repo"
+          />
         </div>
         <div className={styles.navigationWrapper}>
-          <Link href="/project/connect">
-            <a className={styles.next}>
-              <h4>connect</h4>
-              <span>&rarr;</span>
-            </a>
-          </Link>
+          <NavigationLink
+            url="/project/connect"
+            isPrevious={false}
+            text="connect"
+          />
         </div>
         <Footer />
       </main>

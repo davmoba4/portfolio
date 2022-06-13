@@ -1,0 +1,66 @@
+.link {
+  z-index: 1;
+  transform: translate3d(0, 0, 0); // to fix z-index issue on safari
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 900;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-teal-light);
+  border: var(--color-teal-light) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+  text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.3),
+    0 0 0.45em var(--color-teal-light);
+
+  box-shadow: inset 0 0 0.5em 0 var(--color-teal-light),
+    0 0 0.5em 0 var(--color-teal-light);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &::before {
+    pointer-events: none;
+    background: var(--color-teal-light);
+    top: 120%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  }
+  &::after {
+    z-index: -1;
+    top: 0;
+    box-shadow: 0 0 1em 0.5em var(--color-teal-light);
+    opacity: 0;
+    background-color: var(--color-teal-light);
+    transition: opacity 100ms linear;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--color-blue-dark);
+    text-shadow: none;
+
+    &::after {
+      opacity: 1;
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 48rem) {
+  .link {
+    font-size: 1.5rem;
+  }
+}

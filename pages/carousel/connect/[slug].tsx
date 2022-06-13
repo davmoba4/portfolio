@@ -1,8 +1,6 @@
-import styles from "../../../styles/carousel/connect.module.scss";
-
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import React from "react";
-import Link from "next/link";
+import ImageCarouselSlide from "../../../components/ImageCarouselSlide/ImageCarouselSlide";
 
 interface PageData {
   [key: string]: {
@@ -76,34 +74,12 @@ interface Props {
 
 const Connect: NextPage<Props> = ({ data, slug }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.imageWrapper}>
-        <div className={styles.navIndicators}>
-          {Object.keys(PAGE_DATA).map((key: string) => (
-            <div
-              key={key}
-              className={`${key === slug ? styles.currentSlide : ""}`}
-            ></div>
-          ))}
-        </div>
-        <img src={`${data.imageUrl}`} alt={`${data.imageAlt}`} />
-      </div>
-      <Link href="/project/connect">
-        <a className={styles.backBtn} aria-label="back">
-          &larr;
-        </a>
-      </Link>
-      <Link href={`${data.previousUrl}`}>
-        <a className={styles.previousBtn} aria-label="previous">
-          &lsaquo;
-        </a>
-      </Link>
-      <Link href={`${data.nextUrl}`}>
-        <a className={styles.nextBtn} aria-label="next">
-          &rsaquo;
-        </a>
-      </Link>
-    </div>
+    <ImageCarouselSlide
+      keys={Object.keys(PAGE_DATA)}
+      data={data}
+      slug={slug}
+      backLink="/project/connect"
+    />
   );
 };
 
